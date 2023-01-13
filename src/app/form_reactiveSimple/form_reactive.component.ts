@@ -8,22 +8,27 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 
 export class Form_reactiveComponent implements OnInit{
-    constructor(private readonly fb: FormBuilder){}
-    // Variables
-    reactive!: FormGroup;
+
+    simpleForm!: FormGroup;
+
+    constructor(private readonly builder: FormBuilder){}
+
     ngOnInit(): void {
-        this.reactive = this.construir();
+        this.simpleForm = this.Estructurar();
     }
 
-    // Funciones 
-    construir(){
-        return this.fb.group({
-            name: ['',[Validators.required, Validators.minLength(5)]]
-        })
+    boleano!:string;
+    tomarDatos(){
+        console.log(this.simpleForm.value);
+        this.boleano=this.simpleForm.value;
+        this.simpleForm.reset();
     }
-    tomar(){
-        alert(this.reactive.value)
-        console.log(this.reactive.value)
+
+    Estructurar(){
+        return this.builder.group({
+            nombre: ['',[Validators.required]],
+            apellido: ['',[Validators.required]]
+        })
     }
 
 }

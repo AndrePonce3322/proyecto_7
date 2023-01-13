@@ -1,4 +1,18 @@
-<form (ngSubmit)="tomar()" [formGroup]="reactive">
-    <input type="text" formControlName="name" placeholder="Escribe tu nombre" >
-    <button type="submit" [disabled]="reactive.invalid">Tomar Datos</button>
+<p>Empezando desde cero para hacer un formulario reactive simple :D</p>
+<hr>
+<form (ngSubmit)="tomarDatos()" [formGroup]="simpleForm">
+    <!-- Nombre -->
+    <label for="nombre">Escribe tu nombre</label><br>
+    <input type="text" formControlName="nombre" placeholder="example: juan">
+    <!-- Apellido --><br><br>
+    <label for="apellido">Escribe tu apellido</label><br>
+    <input type="text" formControlName="apellido" placeholder="example: perez"><br><br>
+
+    <!-- Enviar datos -->
+    <button class="btn btn-primary col-2" type="submit" [disabled]="simpleForm.invalid">Send</button>
 </form>
+
+<div *ngIf="boleano" class="alert alert-success">
+    <p>Datos enviados:</p>
+    <pre>{{boleano | json | titlecase}}</pre>
+</div>

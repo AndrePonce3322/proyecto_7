@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { Form_reactiveComponent } from './form_reactiveSimple/form_reactive.component';
 
 // Formularios
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
