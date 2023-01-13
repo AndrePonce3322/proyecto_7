@@ -1,0 +1,11 @@
+.notitas{
+    position: relative;
+    width: 450px;
+    margin: 20px;
+    border: 1px solid; 
+    padding: 3px;
+    border-radius: 5px;
+}
+.notitas{
+    position: relative;
+}

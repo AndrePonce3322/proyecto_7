@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
@@ -8,6 +8,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 
 export class Form_reactiveComponent implements OnInit{
+
+    @ViewChild('textoNotas', {static: true})
+    textoNotas!: ElementRef;
 
     simpleForm!: FormGroup;
 
@@ -30,5 +33,7 @@ export class Form_reactiveComponent implements OnInit{
             apellido: ['',[Validators.required]]
         })
     }
+
+
 
 }

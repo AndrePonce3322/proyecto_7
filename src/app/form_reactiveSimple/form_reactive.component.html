@@ -16,3 +16,64 @@
     <p>Datos enviados:</p>
     <pre>{{boleano | json | titlecase}}</pre>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="notitas" #textoNotas>
+    <h6 [align]="'center'">Notitas Form reactive 👀</h6>
+    <ol>
+        <li>
+            <p>Importar al app module nuestras herramientas para el formulario reactivo</p>
+            <code>import {{'{FormsModule, ReactiveFormsModule}'}} form @angular/forms</code>
+        </li><br>
+        <li>
+            <p>En nuestro formulario necesitamos agregarle un nombre al formulario con <code>[formGroup]=""</code></p>
+            <p>Los demas inputs agregarle un nombre/identificador con <code>formControlName="" </code></p>
+        </li>
+        <li>
+            <p>En nuestro archivo TS importar los siguientes archivos:</p>
+            <code>import {{'{FormGroup, Validators, FormBuilder}'}} from @angular/forms </code>
+        </li><br>
+        <li>
+            <p>Ahora agregar la variable que le pusimos de nombre a nuestro Form:</p>
+            <code>
+                {{'{variableName}'}}!:FormGroup;
+            </code>
+        </li><br>
+        <li>
+            <p>Cada grupo necesita un FormBuilder para crearlo estos son los pasos:</p>
+            <code>constructor(private readOnly builder: FormBuilder){{'{}'}}</code>
+        </li><br>
+        <li>
+            <p>Asignar el Builder mediante funciones:</p>
+            <code>
+                ngOnInit(): void{{'{this.{variableName} = Build()'}} <br><br>
+
+                Build() <br>{{'{
+                    return this.builder.group = { 
+                    name: ["", [Validators.required]]
+                }}'}}
+            </code>
+        </li><br>
+        <li>
+            <p>Para mostrar los datos del formulario podriamos asignarle el atributo <code>(ngSubmit)="name()"</code> a el formulario y luego mostrar los datos por consola con</p>
+            <code>name(){{'{console.log(NombreAsignadoAlGrupo)}'}}</code>
+        </li><br>
+        <li>Disfruta de tu formulario Reactive :)</li><br>
+    </ol>
+</div>

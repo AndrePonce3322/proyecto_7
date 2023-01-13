@@ -8,7 +8,7 @@ import { Form_reactiveComponent } from './form_reactiveSimple/form_reactive.comp
 
 // Formularios
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { RutaFormModule } from './ruta-form.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    RutaFormModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
