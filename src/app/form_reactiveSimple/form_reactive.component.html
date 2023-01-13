@@ -1,0 +1,4 @@
+<form (ngSubmit)="tomar()" [formGroup]="reactive">
+    <input type="text" formControlName="name" placeholder="Escribe tu nombre" >
+    <button type="submit" [disabled]="reactive.invalid">Tomar Datos</button>
+</form>
