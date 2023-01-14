@@ -1,0 +1,24 @@
+<form (ngSubmit)="boton()" [formGroup]="loginForm">
+    <div class="contenedor">
+        <h4>Login</h4>
+        <hr>
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="example: Juanito manos largas"  formControlName="name">
+            <div *ngIf="loginForm.get('name')?.touched && loginForm.get('name')?.errors?.['required']" class="alert alert-danger">Este campo es requerido</div>
+            <div *ngIf="loginForm.get('name')?.touched && loginForm.get('name')?.errors?.['minlength']" class="alert alert-danger">Tu nombre debe de ser mayor de {{loginForm.get('name')?.errors?.['minlength'].requiredLength}} dígitos</div>
+            
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Last Name</label>
+            <input class="form-control" type="text" placeholder="example: pedrito" formControlName="lastname">
+            <div *ngIf="loginForm.get('lastname')?.touched && loginForm.get('lastname')?.errors?.['required']" class="alert alert-danger">Este campo es requerido</div>
+            <div *ngIf="loginForm.get('lastname')?.touched && loginForm.get('lastname')?.errors?.['minlength']" class="alert alert-danger">Tu apellido debe de ser mayor de {{loginForm.get('lastname')?.errors?.['minlength'].requiredLength}} dígitos</div>
+        </div>
+
+        <button class="btn btn-success col-2" type="submit" [disabled]="loginForm.invalid">Send</button>
+
+    </div>
+</form>
+w

@@ -5,21 +5,29 @@ import { AppComponent } from './app.component';
 
 // Componentes
 import { Form_reactiveComponent } from './form_reactiveSimple/form_reactive.component';
+import { HomeComponent } from './home/home.component';
 
 // Formularios
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RutaFormModule } from './ruta-form.module';
+import { LoginComponent } from './login/login.component';
+
+// rutas
+import { RutasModule } from './ruta.routing.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     Form_reactiveComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RutaFormModule,
+    RutasModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
