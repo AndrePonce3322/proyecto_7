@@ -5,6 +5,15 @@
     margin-top: 10px;
 }
 
+.contenedor{
+    width: 90%;
+    margin: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.445), 0px 0px 3px black;
+    padding: 30px 10px 30px 10px;
+    border-radius: 5px;
+    background: linear-gradient(45deg, rgba(194, 174, 174, 0.61),rgb(199, 184, 184));
+}
+
 .notitas{
     position: relative;
     width: 90%;

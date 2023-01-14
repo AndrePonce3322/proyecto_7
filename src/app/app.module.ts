@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 // Componentes
 import { Form_reactiveComponent } from './form_reactiveSimple/form_reactive.component';
 import { HomeComponent } from './home/home.component';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
+import { CardComponent } from './card/card.component';
+
 
 // Formularios
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +24,9 @@ import { RutasModule } from './ruta.routing.module';
     AppComponent,
     Form_reactiveComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    BienvenidaComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

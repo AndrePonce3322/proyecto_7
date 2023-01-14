@@ -1,0 +1,41 @@
+.contenedor{
+    position: relative;
+    min-width: 100%;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 70vh;
+}
+h2,h1,h3,h4,h5,h6{
+    font-family: 'Permanent Marker', cursive;
+}
+.imagen{
+    position: absolute;
+    min-width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('https://www.xtrafondos.com/wallpapers/juego-de-gato-stray-11202.jpg');
+    background-position: right;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.95);
+}
+.cont_informacion{
+    min-width: 100%;
+}
+.informacion{
+    padding: 20px;
+}
+
+.flex{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

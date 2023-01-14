@@ -1,39 +1,27 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-    selector: 'app-form_reactive',
-    templateUrl: './form_reactive.component.html',
-    styleUrls: ['./form_reactive.component.css']
+  selector: 'app-login',
+  templateUrl: './form_reactive.component.html',
+  styleUrls: ['./form_reactive.component.css']
 })
-
 export class Form_reactiveComponent implements OnInit{
+  loginForm!:FormGroup;
+  boton(){
+    this.loginForm.reset();
+  }
+  constructor(private readonly formbuilder: FormBuilder){}
 
-    @ViewChild('textoNotas', {static: true})
-    textoNotas!: ElementRef;
+  ngOnInit(): void {
+    this.loginForm = this.Builder();
+  }
 
-    simpleForm!: FormGroup;
-
-    constructor(private readonly builder: FormBuilder){}
-
-    ngOnInit(): void {
-        this.simpleForm = this.Estructurar();
-    }
-
-    boleano!:string;
-    tomarDatos(){
-        console.log(this.simpleForm.value);
-        this.boleano=this.simpleForm.value;
-        this.simpleForm.reset();
-    }
-
-    Estructurar(){
-        return this.builder.group({
-            nombre: ['',[Validators.required]],
-            apellido: ['',[Validators.required]]
-        })
-    }
-
-
+  Builder(){
+    return this.formbuilder.group({
+      name: ['',[Validators.required, Validators.minLength(4)]],
+      lastname: ['',[Validators.required, Validators.minLength(4)]]
+    })
+  }
 
 }

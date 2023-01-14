@@ -1,21 +1,27 @@
-<p>Empezando desde cero para hacer un formulario reactive simple :D</p>
-<hr>
-<form (ngSubmit)="tomarDatos()" [formGroup]="simpleForm">
-    <!-- Nombre -->
-    <label for="nombre">Escribe tu nombre</label><br>
-    <input type="text" formControlName="nombre" placeholder="example: juan">
-    <!-- Apellido --><br><br>
-    <label for="apellido">Escribe tu apellido</label><br>
-    <input type="text" formControlName="apellido" placeholder="example: perez"><br><br>
+<form (ngSubmit)="boton()" [formGroup]="loginForm">
+    <div class="contenedor">
+        <h4>Registro</h4>
+        <hr>
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="example: Juanito manos largas"  formControlName="name">
+            <div *ngIf="loginForm.get('name')?.touched && loginForm.get('name')?.errors?.['required']" class="alert alert-danger">Este campo es requerido</div>
+            <div *ngIf="loginForm.get('name')?.touched && loginForm.get('name')?.errors?.['minlength']" class="alert alert-danger">Tu nombre debe de ser mayor de {{loginForm.get('name')?.errors?.['minlength'].requiredLength}} dígitos</div>
+            
 
-    <!-- Enviar datos -->
-    <button class="btn btn-primary col-2" type="submit" [disabled]="simpleForm.invalid">Send</button>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Last Name</label>
+            <input class="form-control" type="text" placeholder="example: pedrito" formControlName="lastname">
+            <div *ngIf="loginForm.get('lastname')?.touched && loginForm.get('lastname')?.errors?.['required']" class="alert alert-danger">Este campo es requerido</div>
+            <div *ngIf="loginForm.get('lastname')?.touched && loginForm.get('lastname')?.errors?.['minlength']" class="alert alert-danger">Tu apellido debe de ser mayor de {{loginForm.get('lastname')?.errors?.['minlength'].requiredLength}} dígitos</div>
+        </div>
+
+        <button class="btn btn-primary col-2" type="submit" [disabled]="loginForm.invalid">Send</button>
+
+    </div>
 </form>
 
-<div *ngIf="boleano" class="alert alert-success">
-    <p>Datos enviados:</p>
-    <pre>{{boleano | json | titlecase}}</pre>
-</div>
 
 
 
@@ -32,7 +38,7 @@
 
 
 
-
+<!-- 
 <div class="nota">
     <div class="notitas" #textoNotas>
         <h6 [align]="'center'">Notitas Form reactive 👀</h6>
@@ -79,4 +85,4 @@
             <li>Disfruta de tu formulario Reactive :)</li><br>
         </ol>
     </div>
-</div>
+</div> -->

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +8,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit{
   loginForm!:FormGroup;
+  @Output() formulario = new EventEmitter<string>();
+
+
   boton(){
     this.loginForm.reset();
+    this.formulario.emit(this.loginForm.value)
   }
   constructor(private readonly formbuilder: FormBuilder){}
 
   ngOnInit(): void {
     this.loginForm = this.Builder();
+
   }
 
   Builder(){

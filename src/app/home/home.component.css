@@ -1,0 +1,8 @@
+.navbar{
+    box-shadow: 0px 0px 3px black;
+}
+
+.active{
+    background-color: rgba(0, 0, 0, 0.678);
+    color: white !important;
+}
