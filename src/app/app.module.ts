@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 
 // rutas
 import { RutasModule } from './ruta.routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -26,7 +27,8 @@ import { RutasModule } from './ruta.routing.module';
     LoginComponent,
     HomeComponent,
     BienvenidaComponent,
-    CardComponent
+    CardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

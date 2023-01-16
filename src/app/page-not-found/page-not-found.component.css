@@ -1,0 +1,16 @@
+.contenedor {
+    min-width: 100%;
+    width: 100%;
+    min-height: 90vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h4{
+    font-family: 'Permanent Marker', cursive;
+}
+.messaje{
+    padding: 15px;
+}

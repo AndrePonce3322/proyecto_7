@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,25 +8,34 @@ import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  loginForm!:FormGroup;
-  @Output() formulario = new EventEmitter<string>();
+  loginForm!: FormGroup;
+  nameData!: string;
 
 
-  boton(){
+  constructor(private readonly formbuilder: FormBuilder, private EnviarRuta: Router, private readonly TomarDatosRoute: ActivatedRoute) { }
+
+  boton() {
+    // Enviando los datos del name en querys
+    this.EnviarRuta.navigate(['home'],{queryParams: {nameLogin: this.loginForm.value.name, lastnameLogin: this.loginForm.value.lastname}});
+    // Reseteando formulario
     this.loginForm.reset();
-    this.formulario.emit(this.loginForm.value)
   }
-  constructor(private readonly formbuilder: FormBuilder){}
 
   ngOnInit(): void {
     this.loginForm = this.Builder();
 
+    this.TomarDatosRoute.queryParams.subscribe(
+      (parametros: Params) => {
+        this.nameData = parametros['name'];
+      }
+    )
+
   }
 
-  Builder(){
+  Builder() {
     return this.formbuilder.group({
-      name: ['',[Validators.required, Validators.minLength(4)]],
-      lastname: ['',[Validators.required, Validators.minLength(4)]]
+      name: ['', [Validators.required, Validators.minLength(4)]],
+      lastname: ['', [Validators.required, Validators.minLength(4)]]
     })
   }
 
