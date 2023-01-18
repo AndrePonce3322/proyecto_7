@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
@@ -10,7 +10,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class LoginComponent implements OnInit{
   loginForm!: FormGroup;
   nameData!: string;
-
 
   constructor(private readonly formbuilder: FormBuilder, private EnviarRuta: Router, private readonly TomarDatosRoute: ActivatedRoute) { }
 

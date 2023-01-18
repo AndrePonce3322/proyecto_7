@@ -1,6 +1,8 @@
 <div class="contenedor">
     <div class="imagen"></div>
-    <h3><i class="bi bi-wordpress" *ngIf="loginName"></i> Bienvenido {{loginName | titlecase}} {{loginLastName | titlecase}} nuestra página web está creada por profesionales</h3>
+    <h3 *ngIf="loginName"><i class="bi bi-wordpress"></i> Bienvenido {{loginName | titlecase}} {{loginLastName | titlecase}}! espero que te guste mi página web</h3>
+    <h3 *ngIf="!loginName"><i class="bi bi-wordpress"></i> Bienvenido nuestra página web está diseñada por profesionales en Software</h3>
+
     <h3></h3>
 </div>
 
