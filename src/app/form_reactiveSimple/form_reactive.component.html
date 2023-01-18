@@ -4,21 +4,25 @@
         <hr>
         <div class="mb-3">
             <label class="form-label">Name</label>
-            <input type="text" class="form-control" placeholder="example: Juanito manos largas"  formControlName="name">
+            <input type="text" class="form-control" placeholder="example: Andre sebastian"  formControlName="name">
             <div *ngIf="loginForm.get('name')?.touched && loginForm.get('name')?.errors?.['required']" class="alert alert-danger">Este campo es requerido</div>
-            <div *ngIf="loginForm.get('name')?.touched && loginForm.get('name')?.errors?.['minlength']" class="alert alert-danger">Tu nombre debe de ser mayor de {{loginForm.get('name')?.errors?.['minlength'].requiredLength}} dígitos</div>
+            <div *ngIf="loginForm.get('name')?.touched && loginForm.get('name')?.errors?.['minlength']" class="alert alert-danger">Este campo debe de tener al menos {{loginForm.get('name')?.errors?.['minlength'].requiredLength}} dígitos</div>
             
 
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Last Name</label>
-            <input class="form-control" type="text" placeholder="example: pedrito" formControlName="lastname">
+            <input class="form-control" type="text" placeholder="example: Ponce Garcia" formControlName="lastname">
             <div *ngIf="loginForm.get('lastname')?.touched && loginForm.get('lastname')?.errors?.['required']" class="alert alert-danger">Este campo es requerido</div>
-            <div *ngIf="loginForm.get('lastname')?.touched && loginForm.get('lastname')?.errors?.['minlength']" class="alert alert-danger">Tu apellido debe de ser mayor de {{loginForm.get('lastname')?.errors?.['minlength'].requiredLength}} dígitos</div>
+            <div *ngIf="loginForm.get('lastname')?.touched && loginForm.get('lastname')?.errors?.['minlength']" class="alert alert-danger">Este campo debe de tener al menos {{loginForm.get('lastname')?.errors?.['minlength'].requiredLength}} dígitos</div>
         </div>
 
         <button class="btn btn-primary col-2" type="submit" [disabled]="loginForm.invalid">Send</button>
-
+                <!-- Data -->
+            <div class="alert alert-success" *ngIf="loginForm.valid">
+                <p>¡Good Job! Your data can be send:</p>
+                <pre>{{loginForm.value | json}}</pre>
+            </div>        
     </div>
 </form>
 

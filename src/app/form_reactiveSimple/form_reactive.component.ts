@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +11,13 @@ export class Form_reactiveComponent implements OnInit{
   loginForm!:FormGroup;
   userID!:string;
 
+  constructor(private readonly formbuilder: FormBuilder, private readonly idRoute: ActivatedRoute, private readonly sendData: Router){}
+
   boton(){
+    this.sendData.navigate(['home'], {queryParams: {name: this.loginForm.value.name, lastname: this.loginForm.value.lastname}});
+
     this.loginForm.reset();
   }
-  constructor(private readonly formbuilder: FormBuilder, private readonly idRoute: ActivatedRoute){}
 
   ngOnInit(): void {
     this.idRoute.params.subscribe(
@@ -28,8 +31,8 @@ export class Form_reactiveComponent implements OnInit{
 
   Builder(){
     return this.formbuilder.group({
-      name: ['',[Validators.required, Validators.minLength(4)]],
-      lastname: ['',[Validators.required, Validators.minLength(4)]]
+      name: ['',[Validators.required, Validators.minLength(7)]],
+      lastname: ['',[Validators.required, Validators.minLength(7)]]
     })
   }
 

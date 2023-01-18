@@ -15,8 +15,8 @@ export class BienvenidaComponent implements OnInit {
   ngOnInit(): void {
     this.tomarParametros.queryParams.subscribe(
       (parametros: Params) =>{
-        this.loginName = parametros['nameLogin'];
-        this.loginLastName = parametros['lastnameLogin']
+        this.loginName = parametros['name'];
+        this.loginLastName = parametros['lastname'];
       }
     )
   }

@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit{
 
   boton() {
     // Enviando los datos del name en querys
-    this.EnviarRuta.navigate(['home'],{queryParams: {nameLogin: this.loginForm.value.name, lastnameLogin: this.loginForm.value.lastname}});
+    this.EnviarRuta.navigate(['home'],{queryParams: {name: this.loginForm.value.name, lastname: this.loginForm.value.lastname}});
     // Reseteando formulario
     this.loginForm.reset();
   }
@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit{
 
   Builder() {
     return this.formbuilder.group({
-      name: ['', [Validators.required, Validators.minLength(4)]],
-      lastname: ['', [Validators.required, Validators.minLength(4)]]
+      name: ['', [Validators.required, Validators.minLength(6)]],
+      lastname: ['', [Validators.required, Validators.minLength(6)]]
     })
   }
 
