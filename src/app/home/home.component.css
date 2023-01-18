@@ -2,10 +2,17 @@
     box-shadow: 0px 0px 3px black;
     transition: 1s;
 }
-
+i{
+    margin: 0px 5px 0px 0px;
+}
 .active{
     background-color: rgba(0, 0, 0, 0.678);
     color: white !important;
+    border-radius: 2px;
+}
+.nav-link{
+    display: flex;
+    align-items: center;
 }
 .DarkMode{
     background: #181a1b !important;
@@ -16,6 +23,9 @@
 }
 .DarkMode .active{
     background-color: #494f55;
+}
+.DarkMode button{
+    box-shadow: 0px 0px 3px white;
 }
 
 /* Estilos
