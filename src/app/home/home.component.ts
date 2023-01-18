@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,14 +6,24 @@ import { Router } from '@angular/router';
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
 
 	iconoOff = 'bi bi-toggle-off';
 	iconoOn = 'bi bi-toggle-on'
 
 	validacionDark = this.iconoOff;
-	boleanoDarkMode=false; //Emitir datos del modo dark
-	contador = 0;
+	boleanoDarkMode=true; //Emitir datos del modo dark
+
+	ngOnInit():void{
+		if(this.boleanoDarkMode == true){
+			this.validacionDark = this.iconoOn;
+		}else{
+			this.validacionDark = this.iconoOff;
+		}
+	}
+
+
+	contador = 1;
 
 	@Output() boleanDark = new EventEmitter<boolean>();
 

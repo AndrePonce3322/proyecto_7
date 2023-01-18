@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    validacionBg = '#FFF'; //Modo claro
-    validacionTxt = '#181a1b'; //Texto modo negro
+    validacionBg = '#181a1b'; //Modo claro
+    validacionTxt = '#FFF'; //Texto modo negro
 
     recibirDarkMode(verificacion: boolean) {
         if (verificacion == true) {
