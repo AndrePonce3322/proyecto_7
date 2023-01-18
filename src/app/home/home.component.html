@@ -1,7 +1,6 @@
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" [ngClass]="{'DarkMode':boleanoDarkMode == true}">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="">Navbar / Responsive</a>
+    <a class="navbar-brand" routerLink="">Responsive / Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,14 +11,14 @@
           <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="login" (click)="loginData()">Login</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="registro" (click)="enviar()">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="registro" (click)="enviar()">Registro</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="login" (click)="loginData()">Login</a>
         </li>
       </ul>
       <span class="navbar-text">
-        <button class="btn" (click)="modoDark()" ><i [class]="validacionDark"></i>  Modo oscuro</button>
+        <button class="btn" (click)="modoDark()"><i [class]="validacionDark"></i> Dark Mode</button>
       </span>
     </div>
   </div>

@@ -5,4 +5,15 @@
     border-radius: 5px;
     background: rgb(214, 202, 202);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.445), 0px 0px 3px black;
+    z-index: 100;
+    color: black;
+}
+button{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alert{
+    margin-top: 10px;
 }

@@ -1,6 +1,6 @@
 <form (ngSubmit)="boton()" [formGroup]="loginForm">
     <div class="contenedor">
-        <h4>Login De {{nameData}}</h4>
+        <h4>Login{{nameData}}</h4>
         <hr>
         <div class="mb-3">
             <label class="form-label">Name</label>
@@ -19,5 +19,12 @@
 
         <button class="btn btn-success col-2" type="submit" [disabled]="loginForm.invalid">Send</button>
 
-    </div>
+        <!-- Data -->
+        <div class="alert alert-success" *ngIf="loginForm.valid">
+            <p>¡Good Job! Your data is this, now just send:</p>
+            <pre>{{loginForm.value | json}}</pre>
+        </div>        
+    </div>    
 </form>
+
+

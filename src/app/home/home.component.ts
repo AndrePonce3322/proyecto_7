@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,9 +12,10 @@ export class HomeComponent {
 	iconoOn = 'bi bi-toggle-on'
 
 	validacionDark = this.iconoOff;
-	boleanoDarkMode=false;
+	boleanoDarkMode=false; //Emitir datos del modo dark
 	contador = 0;
 
+	@Output() boleanDark = new EventEmitter<boolean>();
 
 	constructor(private readonly data: Router) { }
 
@@ -24,7 +25,7 @@ export class HomeComponent {
 	}
 
 	loginData() {
-		this.data.navigate(['login'], { queryParams: { name: 'Andre' } })
+		this.data.navigate(['login'], { queryParams: { name: '...' } })
 	}
 
 	modoDark() {
@@ -33,12 +34,12 @@ export class HomeComponent {
 		if (this.contador >= 1) {
 			this.validacionDark = this.iconoOn;
 			this.boleanoDarkMode=true;
-
-			
+			this.boleanDark.emit(this.boleanoDarkMode); //Emitiendo si ha tocado el boton será true 
 		}
 		if(this.contador >= 2){
 			this.validacionDark = this.iconoOff;
 			this.boleanoDarkMode=false;
+			this.boleanDark.emit(this.boleanoDarkMode); //Sino ha tocado el botón será false
 			this.contador = 0;
 		}
 

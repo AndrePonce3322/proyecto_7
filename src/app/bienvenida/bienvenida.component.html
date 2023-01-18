@@ -1,17 +1,28 @@
 <div class="contenedor">
     <div class="imagen"></div>
-    <h3 *ngIf="loginName"><i class="bi bi-wordpress"></i> Bienvenido {{loginName | titlecase}} {{loginLastName | titlecase}}! espero que te guste mi página web</h3>
-    <h3 *ngIf="!loginName"><i class="bi bi-wordpress"></i> Bienvenido nuestra página web está diseñada por profesionales en Software</h3>
+    <h3 *ngIf="loginName"><i class="bi bi-wordpress"></i> Welcome {{loginName | titlecase}} {{loginLastName |
+        titlecase}}! I hope you like this web page :)</h3>
+    <h3 *ngIf="!loginName"><i class="bi bi-wordpress"></i> Welcome to my webside, this website is designed by Andre Ponce</h3>
 
     <h3></h3>
 </div>
 
 <div class="cont_informacion">
     <div class="informacion">
-        <h2 [align]="'center'">Te ofrecemos variedad <i class="bi bi-arrows-fullscreen"></i></h2>
+        <h2 [align]="'center'">I will give you the best design <i class="bi bi-arrows-fullscreen"></i></h2>
         <div class="flex">
-            <app-card></app-card>
-            <app-card></app-card>
+            <app-card
+                [texto]="'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, quo id. Optio harum vel, modi eaque minima doloribus porro dignissimos at quia voluptate, quam recusandae fugit expedita vitae cum laborum. By Andre Ponce.  '"
+                [imagen]="'https://www.xtrafondos.com/wallpapers/stray-videojuego-11038.jpg'"
+                [titulo]="'Orange Cat'"
+                >
+            </app-card>
+            <app-card
+                [texto]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident corrupti quis rem harum repellendus, minima eligendi ut voluptatem, dolores explicabo dolorum nihil necessitatibus, debitis saepe officia ratione cum distinctio? Eaque!'"
+                [imagen]="'https://i.pinimg.com/564x/5e/22/db/5e22db384dc476123769ae51619589fa.jpg'"
+                [titulo]="'Black Cat'"
+                >
+            </app-card>
         </div>
     </div>
 </div>
